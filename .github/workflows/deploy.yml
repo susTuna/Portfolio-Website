@@ -3,6 +3,10 @@ name: CI/CD
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+  release:
+    types: [published]
 
 env:
   REGISTRY: ghcr.io
@@ -31,6 +35,7 @@ jobs:
 
   build-and-push:
     needs: lint
+    if: github.event.name == 'release' && github.event.action =='published'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -73,6 +78,7 @@ jobs:
 
   deploy:
     needs: build-and-push
+    if: github.event.name == 'release' && github.event.action =='published'
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to VPS
