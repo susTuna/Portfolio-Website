@@ -16,7 +16,10 @@
       "!!**/*.md",
       "!!**/*.mdx",
       "!!.astro/",
-      "!!dist/"
+      "!!dist/",
+      "!!.dockerignore",
+      "!!Dockerfile",
+      "!!nginx.conf"
     ]
   },
   "formatter": {

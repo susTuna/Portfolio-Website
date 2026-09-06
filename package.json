@@ -12,6 +12,7 @@
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
     "check": "biome check .",
+    "astro:check": "astro check",
     "ci": "biome ci .",
     "prepare": "husky"
   },
