@@ -21,7 +21,7 @@ const { title, image, snippet } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).toString();
 const resolvedImageWithDomain = image;
 
-const makeTitle = title ? title : "Rohit Kushwaha";
+const makeTitle = title ? title : "Frederiko Eldad Mugiyono";
 ---
 
 <!doctype html>
@@ -31,20 +31,11 @@ const makeTitle = title ? title : "Rohit Kushwaha";
     <meta name="description" content={snippet} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta
-      name="google-site-verification"
-      content="AuMlxg6HJG3Rwtp1H81O3OmPVW4WaI5jrk1X4Onm0hU"
-    />
     <meta name="generator" content={Astro.generator} />
     <SEO
       title={makeTitle}
       description={snippet}
       canonical={canonicalURL}
-      twitter={{
-        creator: "@rohitk_06",
-        site: "@rohitk_06",
-        card: "summary_large_image",
-      }}
       openGraph={{
         basic: {
           url: canonicalURL,
@@ -62,14 +53,14 @@ const makeTitle = title ? title : "Rohit Kushwaha";
     />
     <script
       type="text/partytown"
-      src="https://www.googletagmanager.com/gtag/js?id=G-S9TKKTL84G"></script>
+      src="https://www.googletagmanager.com/gtag/js?id=G-2M702E3SPM"></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-S9TKKTL84G");
+      gtag("config", "G-2M702E3SPM");
     </script>
     <title>{title}</title>
   </head>
