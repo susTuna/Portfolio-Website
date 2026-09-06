@@ -19,7 +19,8 @@
       "!!dist/",
       "!!.dockerignore",
       "!!Dockerfile",
-      "!!nginx.conf"
+      "!!nginx.conf",
+      "!!**/*.yml"
     ]
   },
   "formatter": {
