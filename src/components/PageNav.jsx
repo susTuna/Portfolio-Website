@@ -1,5 +1,5 @@
-import { isOpen, goBack } from "../utils/nav";
 import { useStore } from "@nanostores/react";
+import { goBack, isOpen } from "../utils/nav";
 export default function PageNav(props) {
   const $isOpen = useStore(isOpen);
 
@@ -9,10 +9,12 @@ export default function PageNav(props) {
         <div>
           <div className="flex sm:gap-8 gap-4">
             <button
+              type="button"
               onClick={goBack}
               className="px-3 flex items-center w-12 py-2 bg-primary bg-opacity-10 text-primary rounded-xl text-xl"
             >
               <svg
+                aria-label="back"
                 className="fill-primary h-6"
                 fill="#000000"
                 version="1.1"
@@ -40,11 +42,13 @@ export default function PageNav(props) {
               {props.title}
             </h1>
             <button
+              type="button"
               onClick={() => isOpen.set(!$isOpen)}
               id="menuButton"
               className="flex items-center gap-4 bg-primary bg-opacity-10 px-4 rounded-xl"
             >
               <svg
+                aria-label="menu"
                 className="stroke-primary h-6"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +104,7 @@ export default function PageNav(props) {
             </a>
             <a
               className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
-              href="#"
+              href="/#"
             >
               Download CV
             </a>

@@ -8,20 +8,18 @@ import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/inter/800.css";
 import "@fontsource/inter/900.css";
-import { SEO } from "astro-seo";
+
 interface Props {
   title: string;
   image: string;
   snippet: string;
 }
-import Footer from "../components/Footer.astro";
-const { title, image, snippet } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).toString();
-const resolvedImageWithDomain = image;
 
-import { ViewTransitions } from "astro:transitions";
-import preload from "astro-preload";
-const makeTitle = title ? title : "Rohit Kushwaha";
+const { title, image, snippet } = Astro.props;
+const _canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).toString();
+const _resolvedImageWithDomain = image;
+
+const _makeTitle = title ? title : "Rohit Kushwaha";
 ---
 
 <!doctype html>
@@ -78,8 +76,6 @@ const makeTitle = title ? title : "Rohit Kushwaha";
     <Footer />
     <script src="../utils/aos.js"></script>
     <style is:global>
-      * {
-      }
       img {
         content-visibility: auto;
       }

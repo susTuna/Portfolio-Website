@@ -1,11 +1,11 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
+import rss from "@astrojs/rss";
 
 export async function GET(context) {
-  const blog = await getCollection('blog');
+  const blog = await getCollection("blog");
   return rss({
-    title: 'Rohit’s Blog',
-    description: 'Just Blogs by human with bots',
+    title: "Rohit’s Blog",
+    description: "Just Blogs by human with bots",
     site: context.site,
     items: blog.map((post) => ({
       title: post.data.title,

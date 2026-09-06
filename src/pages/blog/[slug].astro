@@ -1,10 +1,8 @@
 ---
 export const prerender = true;
+
 import { getCollection } from "astro:content";
 import { getFormattedDate } from "../../utils/all";
-import BlogLayout from "../../layouts/BlogLayout.astro";
-import PageNav from "../../components/PageNav";
-import { Image } from "astro:assets";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -17,7 +15,7 @@ export async function getStaticPaths() {
 
 // Get the entry directly from the prop on render
 const { entry } = Astro.props;
-const time = getFormattedDate(entry.data.publishDate);
+const _time = getFormattedDate(entry.data.publishDate);
 const { Content, remarkPluginFrontmatter } = await entry.render();
 ---
 

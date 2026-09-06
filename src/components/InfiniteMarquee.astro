@@ -1,0 +1,89 @@
+---
+export interface MarqueeItem {
+  name: string;
+  slug: string;
+}
+
+interface Props {
+  items: MarqueeItem[];
+  reverse?: boolean;
+  speedSec?: number;
+  class?: string;
+}
+
+const {
+  items,
+  reverse = false,
+  speedSec = 40,
+  class: className = "",
+} = Astro.props;
+
+const _trackItems = [...items, ...items];
+---
+
+<div class={`relative overflow-x-hidden py-8 ${className}`}>
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-36 bg-gradient-to-r from-[var(--background)] to-transparent z-20"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-36 bg-gradient-to-l from-[var(--background)] to-transparent z-20"></div>
+
+  <div
+    class:list={[
+      "flex w-max will-change-transform",
+      reverse ? "animate-marquee-reverse" : "animate-marquee"
+    ]}
+    style={{ "--marquee-duration": `${speedSec}s` }}
+  >
+    {
+      trackItems.map((item, index) => {
+        const isDuplicate = index >= items.length;
+        return (
+          <div
+            class="flex items-center gap-3 pr-12 md:pr-20 group transition-all duration-300"
+            aria-hidden={isDuplicate ? "true" : "false"}
+          >
+            <img
+              src={`/svg/${item.slug}.svg`}
+              alt={item.name}
+              class="h-10 w-10 md:h-12 md:w-12 object-contain opacity-70 transition-transform duration-200 group-hover:scale-110 group-hover:opacity-100"
+              width="48"
+              height="48"
+              loading={isDuplicate ? "lazy" : "eager"}
+              decoding="async"
+            />
+            <span class="text-base md:text-lg font-medium text-[var(--white-icon)] whitespace-nowrap">
+              {item.name}
+            </span>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    0% {
+      transform: translate3d(-50%, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee var(--marquee-duration, 40s) linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse var(--marquee-duration, 40s) linear infinite;
+  }
+
+</style>

@@ -1,21 +1,20 @@
-import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import remarkToc from "remark-toc";
 import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
 export default {
-    remarkPlugins: [
-      remarkReadingTime,
-        remarkToc,
-        [
-          remarkCollapse,
-          {
-            test: "Table of contents",
-            
-          },
-        ],
-      ],
-      shikiConfig: {
-        theme: "one-dark-pro",
-        wrap: true,
+  remarkPlugins: [
+    remarkReadingTime,
+    remarkToc,
+    [
+      remarkCollapse,
+      {
+        test: "Table of contents",
       },
-      extendDefaultPlugins: true,
+    ],
+  ],
+  shikiConfig: {
+    theme: "one-dark-pro",
+    wrap: true,
+  },
+  extendDefaultPlugins: true,
 };

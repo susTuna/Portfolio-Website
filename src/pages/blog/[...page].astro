@@ -1,27 +1,24 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import PageNav from "../../components/PageNav";
-import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
-import { getFormattedDate } from "../../utils/all";
+
 const post = await getCollection("blog");
-const sortedPost = post.sort(
+const _sortedPost = post.sort(
   (a, b) =>
     new Date(b.data.publishDate).valueOf() -
-    new Date(a.data.publishDate).valueOf()
+    new Date(a.data.publishDate).valueOf(),
 );
 export async function getStaticPaths({ paginate }) {
   const post = await getCollection("blog");
   const sortedPost = post.sort(
     (a, b) =>
       new Date(b.data.publishDate).valueOf() -
-      new Date(a.data.publishDate).valueOf()
+      new Date(a.data.publishDate).valueOf(),
   );
   return paginate(sortedPost, { pageSize: 9 });
 }
-const { page }: any = Astro.props;
-const prevPagination = page.url.prev ? "cursor-pointer" : "cursor-not-allowed";
-const nextPagination = page.url.next ? "cursor-pointer" : "cursor-not-allowed";
+const { page } = Astro.props;
+const _prevPagination = page.url.prev ? "cursor-pointer" : "cursor-not-allowed";
+const _nextPagination = page.url.next ? "cursor-pointer" : "cursor-not-allowed";
 ---
 
 <Layout title="Blog | Rohit Kushwaha">
@@ -37,7 +34,7 @@ const nextPagination = page.url.next ? "cursor-pointer" : "cursor-not-allowed";
         {
           page.data.map(async (item) => {
             const { remarkPluginFrontmatter } = await item.render();
-            let time = getFormattedDate(item.data.publishDate);
+            const time = getFormattedDate(item.data.publishDate);
             return (
               <div class="flex flex-col gap-4">
                 <div class="relative ">
@@ -57,7 +54,7 @@ const nextPagination = page.url.next ? "cursor-pointer" : "cursor-not-allowed";
                   <a
                     aria-label={item.slug}
                     transition:name={item.slug}
-                    href={"/blog/" + item.slug}
+                    href={`/blog/${item.slug}`}
                     class="text-primary font-bold text-2xl "
                   >
                     {item.data.title}
@@ -79,6 +76,7 @@ const nextPagination = page.url.next ? "cursor-pointer" : "cursor-not-allowed";
       <div class="w-full flex items-center justify-between">
         <div class="flex items-center pt-3 text-primary">
           <svg
+            aria-label="pagination"
             width="14"
             height="8"
             viewBox="0 0 14 8"
@@ -117,6 +115,7 @@ const nextPagination = page.url.next ? "cursor-pointer" : "cursor-not-allowed";
             class={` ${nextPagination} font-medium leading-none mr-3`}>Next</a
           >
           <svg
+          aria-label="pagination"
             width="14"
             height="8"
             viewBox="0 0 14 8"

@@ -1,14 +1,12 @@
-import Toast from "./Toast.jsx";
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-
 import backgroundImg from "../assets/images/background.webp";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [isToast, setisToast] = useState(false);
+  const [_isToast, _setisToast] = useState(false);
   function Check() {
     if (!message || !email || !name) {
       toast.error("Invalid inputs", {
@@ -30,16 +28,16 @@ export default function Contact() {
         email: email,
       })
       .then((response) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           toast.success("Message Sent Successfully", {
             style: { backgroundColor: "#303030", color: "#fff" },
           });
         }
       })
-      .catch((error) =>
+      .catch((_error) =>
         toast.error("Unable to send messages", {
           style: { backgroundColor: "#303030", color: "#fff" },
-        })
+        }),
       );
   }
   return (

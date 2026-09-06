@@ -11,11 +11,10 @@ import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
 
-import { SEO } from "astro-seo";
-const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).toString();
-const resolvedImageWithDomain = new URL(
+const _canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).toString();
+const _resolvedImageWithDomain = new URL(
   "/image.jpeg",
-  Astro.url.origin
+  Astro.url.origin,
 ).toString();
 
 interface Props {
@@ -23,10 +22,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
-import preload from "astro-preload";
-import Glow from "../components/Glow";
-const makeTitle = title ? title : "Rohit Kushwaha";
+
+const _makeTitle = title ? title : "Rohit Kushwaha";
 ---
 
 <!doctype html>
@@ -93,8 +90,6 @@ const makeTitle = title ? title : "Rohit Kushwaha";
     <slot />
 
     <style is:global>
-      * {
-      }
       img {
         content-visibility: auto;
       }

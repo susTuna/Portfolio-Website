@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Glow = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -39,7 +39,9 @@ const Glow = () => {
     transform: "translate(-50%, -50%)",
     display: isMouseInViewport ? "block" : "none",
   };
-  return <div className="blur-3xl pointer-events-none -z-30" style={glowStyle}></div>;
+  return (
+    <div className="blur-3xl pointer-events-none -z-30" style={glowStyle}></div>
+  );
 };
 
 export default Glow;

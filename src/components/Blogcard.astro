@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import { getFormattedDate } from "../utils/all";
+
 const post = await getCollection("blog");
-const sortedPost = post.sort(
+const _sortedPost = post.sort(
   (a, b) =>
     new Date(b.data.publishDate).valueOf() -
-    new Date(a.data.publishDate).valueOf()
+    new Date(a.data.publishDate).valueOf(),
 );
 ---
 
@@ -30,7 +30,7 @@ const sortedPost = post.sort(
         {
           sortedPost.slice(0, 3).map(async (item) => {
             const { remarkPluginFrontmatter } = await item.render();
-            let time = getFormattedDate(item.data.publishDate);
+            const time = getFormattedDate(item.data.publishDate);
             return (
               <div
                 data-aos="fade-up"
@@ -54,7 +54,7 @@ const sortedPost = post.sort(
                   <a
                     aria-label={item.slug}
                     transition:name={item.slug}
-                    href={"/blog/" + item.slug}
+                    href={`/blog/${item.slug}`}
                     class="text-primary font-bold text-2xl "
                   >
                     {item.data.title}
