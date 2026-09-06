@@ -3,7 +3,7 @@
 
   
 
-![GitHub](https://img.shields.io/github/license/DevRohit06/Portfolio-website) ![GitHub stars](https://img.shields.io/github/stars/DevRohit06/Portfolio-website) ![GitHub forks](https://img.shields.io/github/forks/DevRohit06/Portfolio-website) ![GitHub last commit](https://img.shields.io/github/last-commit/DevRohit06/Portfolio-website)
+![GitHub](https://img.shields.io/github/license/susTuna/Portfolio-Website) ![GitHub stars](https://img.shields.io/github/stars/susTuna/Portfolio-Website) ![GitHub forks](https://img.shields.io/github/forks/susTuna/Portfolio-Website) ![GitHub last commit](https://img.shields.io/github/last-commit/susTuna/Portfolio-Website)
 
   
 
@@ -19,7 +19,7 @@ This is my personal portfolio website built using Tailwind CSS and Astro. It sho
 
   
 
-You can check out the live website [here](https://rohitk06.vercel.app).
+You can check out the live website [here](https://setsuna.id).
 
   
 
@@ -32,8 +32,6 @@ You can check out the live website [here](https://rohitk06.vercel.app).
 - Projects showcase
 
 - Contact form
-
-- Blog Page
 
   
 
@@ -63,7 +61,7 @@ To run this project locally, follow these steps:
 
 ```bash
 
-git clone https://github.com/DevRohit06/Portfolio-website.git
+git clone https://github.com/susTuna/Portfolio-Website.git
 
 ```
 

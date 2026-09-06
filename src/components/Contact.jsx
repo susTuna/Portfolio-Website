@@ -168,7 +168,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="px-6 py-2 rounded-md bg-white font-bold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Sending..." : "Submitq"}
+                  {isSubmitting ? "Sending..." : "Submit"}
                 </button>
               </div>
             </form>

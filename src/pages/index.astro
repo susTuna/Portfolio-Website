@@ -1,6 +1,5 @@
 ---
 import About from "../components/About.astro";
-// import Blogcard from "../components/Blogcard.astro";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -12,18 +11,16 @@ import Layout from "../layouts/Layout.astro";
 
 ---
 
-<Layout title="Rohit Kushwaha">
+<Layout title="Frederiko Eldad Mugiyono">
   <main class="relative">
-    <IndexNav client:load />
+    <IndexNav client:idle />
     <Header transition:animate="fade" />
     <Hero />
     <About />
     <Timeline />
     <Project />
-    <!-- <Blogcard /> -->
-    <Contact client:load />
+    <Contact client:visible />
     <Footer />
-    <!-- <Education/> -->
   </main>
 </Layout>
 
