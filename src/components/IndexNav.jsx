@@ -18,7 +18,7 @@ export default function IndexNav() {
               >
                 {show ? (
                   <svg
-                    aria-label="carrier"
+                    aria-label="open"
                     className="h-4"
                     height="1em"
                     viewBox="0 0 24 24"
@@ -36,7 +36,7 @@ export default function IndexNav() {
                   </svg>
                 ) : (
                   <svg
-                    aria-label="carrier"
+                    aria-label="close"
                     className="h-4"
                     height="1em"
                     viewBox="0 0 24 24"
@@ -77,28 +77,36 @@ export default function IndexNav() {
                 </a>
                 <button
                   type="button"
-                  onClick={() => isShow(false)}
+                  onClick={() => {
+                    isShow(false);
+                    document
+                      .getElementById("about")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                   aria-label="about"
-                  href="/#about"
                 >
                   About
                 </button>
-                <a
+                {/* <a
                   onClick={() => isShow(false)}
                   aria-label="blogs"
                   href="/blog"
                 >
                   Blogs
-                </a>
+                </a>*/}
                 <button
                   type="button"
-                  onClick={() => isShow(false)}
+                  onClick={() => {
+                    isShow(false);
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                   aria-label="contact"
-                  href="/#contact"
                 >
                   Contact
                 </button>
-                <button type="button">Download CV</button>
+                {/* <button type="button">Download CV</button>*/}
               </ul>
             </div>
           </div>
