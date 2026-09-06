@@ -1,5 +1,8 @@
 ---
-const _technologies: MarqueeItem[] = [
+import type { MarqueeItem } from "./InfiniteMarquee.astro";
+import InfiniteMarquee from "./InfiniteMarquee.astro";
+
+const technologies: MarqueeItem[] = [
   { name: "Rust", slug: "rust" },
   { name: "Go", slug: "go" },
   { name: "C", slug: "c" },
@@ -24,7 +27,7 @@ const _technologies: MarqueeItem[] = [
   { name: "Redis", slug: "redis" },
 ];
 
-const _tools: MarqueeItem[] = [
+const tools: MarqueeItem[] = [
   { name: "Zed", slug: "zed" },
   { name: "Docker", slug: "docker" },
   { name: "Kubernetes", slug: "kubernetes" },

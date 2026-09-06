@@ -1,7 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import Footer from "../../components/Footer.astro";
+import PageNav from "../../components/PageNav";
+import Layout from "../../layouts/Layout.astro";
 import { getData } from "../../utils/projects";
 
-const _data = getData();
+const data = getData();
 ---
 
 <Layout title="Projects | Rohit Kushwaha">

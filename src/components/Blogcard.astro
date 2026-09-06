@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
+import { getFormattedDate } from "../utils/all";
 
 const post = await getCollection("blog");
-const _sortedPost = post.sort(
+const sortedPost = post.sort(
   (a, b) =>
     new Date(b.data.publishDate).valueOf() -
     new Date(a.data.publishDate).valueOf(),
