@@ -10,7 +10,7 @@ import markdownConfig from "./markdown.config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.rohitk06.site",
+  site: "https://setsuna.id",
   prefetch: true,
   markdown: {
     ...markdownConfig,
@@ -37,8 +37,8 @@ export default defineConfig({
     }),
     robotsTxt({
       sitemap: [
-        "https://www.rohitk06.site/sitemap-0.xml",
-        "http://www.rohitk06.site/sitemap-index.xml",
+        "https://setsuna.id/sitemap-0.xml",
+        "https://setsuna.id/sitemap-index.xml",
       ],
     }),
     playformCompress(),
