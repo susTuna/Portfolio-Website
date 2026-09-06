@@ -44,7 +44,7 @@ export default function Contact() {
     setIsSubmitting(true);
     axios.defaults.headers.post["Content-Type"] = "application/json";
     axios
-      .post("https://formsubmit.co/ajax/technicalrohit06@gmail.com", {
+      .post("https://formsubmit.co/ajax/13523147@std.stei.itb.ac.id", {
         name,
         email,
         message,
@@ -168,7 +168,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="px-6 py-2 rounded-md bg-white font-bold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Sending..." : "Submit :)"}
+                  {isSubmitting ? "Sending..." : "Submitq"}
                 </button>
               </div>
             </form>
