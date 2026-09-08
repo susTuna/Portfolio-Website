@@ -45,7 +45,7 @@ const data = getData();
               <a
                 data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom"
-                href={`${item.url}`}
+                href={`${item.url && item.url.trim() !== "" ? item.url : item.github}`}
                 class="relative mx-auto  overflow-hidden rounded-xl bg-transparent  border border-1 border-primary border-opacity-25 shadow-xl"
               >
                 <div class="bg-transparent">
