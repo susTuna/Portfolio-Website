@@ -139,8 +139,6 @@ const overlayStyle = `${noMorph == null ? `background: ${button == null ? "rgba(
         },
       )}') blur(${blur}px) brightness(${brightness}) saturate(${saturate})`;
     } else {
-      // Safari/Firefox fallback — basic glassmorphism
-      // @ts-expect-error
       liquidGlass.style["-webkit-backdrop-filter"] =
         `blur(${width / 10}px) saturate(180%)`;
       liquidGlass.style.backdropFilter =
