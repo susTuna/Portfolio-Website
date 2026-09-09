@@ -36,10 +36,7 @@ export default defineConfig({
       },
     }),
     robotsTxt({
-      sitemap: [
-        "https://setsuna.id/sitemap-0.xml",
-        "https://setsuna.id/sitemap-index.xml",
-      ],
+      sitemap: "https://setsuna.id/sitemap-index.xml",
     }),
     playformCompress(),
   ],
