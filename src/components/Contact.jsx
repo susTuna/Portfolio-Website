@@ -7,7 +7,7 @@ const CONTACT_INFO = [
   {
     icon: "https://img.icons8.com/?size=100&id=jShwZ2RCyPSO&format=png&color=FFFFFF",
     label: "phone",
-    value: "+62 81563787029",
+    value: "+62 85111442235",
   },
   {
     icon: "https://img.icons8.com/?size=100&id=86862&format=png&color=FFFFFF",
